@@ -1,19 +1,36 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {Text,
+     View,
+     StyleSheet
+} from 'react-native';
 
 import LogoHeader from './Components/LogoHeader';
-import Row from './Components/Row';
+import SearchBar from './Components/SearchBar';
 
 class LandingComponent extends Component {
 
     render(){
         return (
-            <View>
-                <LogoHeader />
-                <Row />
+            <View style={styles.main}>
+                <LogoHeader style={styles.logo}/>
+                <SearchBar />
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    main: {
+        width: '100%',
+        flex: 1
+    },
+    logo:{
+        flex: 1
+    },
+    body: {
+        flex: 1,
+        width: '100%'
+    }
+});
 
 export default LandingComponent;

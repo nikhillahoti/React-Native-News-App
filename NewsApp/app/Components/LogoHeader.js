@@ -9,9 +9,9 @@ import Logo from 'react-native-vector-icons/FontAwesome';
 
 const LogoHeader = () => {
     return (
-        <View>
+        <View style={styles.mainContainer}>
             <View style={styles.container}>
-                <Logo name="newspaper-o" color="#3B5998"  size={60} style={styles.logo}/>
+                <Logo name="newspaper-o" color="#3B5998"  size={20} />
                 <Text style={styles.header}>News App</Text>
             </View>
         </View>
@@ -22,21 +22,21 @@ const styles = StyleSheet.create({
     container: {
         flex:1,
         flexDirection: 'row',
-        //justifyContent: 'center',
-        margin: 20,
+        justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F08080',
+        backgroundColor: '#99CCFF',
         width: '100%'
     },
     header: {
-        fontSize: 18,
+        fontSize: 14,
         color: '#3B5998',
         paddingLeft: 20,
         fontWeight:'bold',
         textAlign: 'center'
     },
-    logo: {
-        marginLeft: 20
+    mainContainer: {
+        height: 50,
+        margin: 30
     }
 });
 

@@ -31,10 +31,11 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    width: '100%',
+    height: '100%'
   },
   welcome: {
     fontSize: 20,
