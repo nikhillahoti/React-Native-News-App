@@ -5,26 +5,25 @@ import {Text,
     Image
 } from 'react-native';
 
-class Row extends Component {
+class SingleRecord extends Component {
 
     render(){
-        let name = "By Nathaniel Popper";
-        let title = "How the blockchain could break Big Tech’s hold on AI";
+    /*    let title = "How the blockchain could break Big Tech’s hold on AI";
         let url = "https://www.sfgate.com/business/article/How-the-blockchain-could-break-Big-Tech-s-hold-13322048.php";
         let imageUrl = "https://s.hdnux.com/photos/76/32/44/16361775/5/rawImage.jpg"; 
         let sourceName = "Herald";
-        let time="51 minutes ago";
+        let time="51 minutes ago"; */
         
         return (
             <View style={styles.mainContainer}>
                 <View style={styles.mainContentContainer}>
-                    <Text style={styles.sourceName}>{sourceName}</Text>
-                    <Text style={styles.Content}>{title}</Text>
-                    <Text style={styles.timeFont}>{time}</Text>
+                    <Text style={styles.sourceName}>{this.props.record.source.name}</Text>
+                    <Text style={styles.Content}>{this.props.record.title}</Text>
+                    <Text style={styles.timeFont}>{this.props.record.time}</Text>
                 </View>
                 <View style={styles.imageContainer}>
                     <Image 
-                        source={{uri: imageUrl}}
+                        source={{uri: this.props.record.urlToImage}}
                         style={{width: 80, height: 80}}
                     />
                 </View>
@@ -64,4 +63,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Row;
+export default SingleRecord;

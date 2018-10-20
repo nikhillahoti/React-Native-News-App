@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import _ from 'lodash';
 
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class SearchBar extends Component {
 
@@ -19,18 +19,17 @@ class SearchBar extends Component {
         }
     }
 
-    fetchData = (searchTextt) => {
-        let URL = "https://newsapi.org/v2/everything?q=bitcoin&from=2018-09-19&sortBy=publishedAt&apiKey=0779894fee914878a3e5353ecefd9e20";
-        fetch(URL)
-        .then((data) => {
-            console.log(data);
-            let records = JSON.parse(data._bodyText);
-            console.log(records.articles);
-        });
+    fetchData = (searchText) => {
+        let URL = "https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=0779894fee914878a3e5353ecefd9e20";
+        return fetch(URL)
+                .then((data) => {
+                    let records = JSON.parse(data._bodyText);
+                    return records.articles;
+                });
     }
 
     getSearchResults = () => {
-        this.fetchData();
+        let recordList = this.fetchData();
         this.setState({
             searchText: "Nikhil" + this.state.searchText
         })
@@ -47,7 +46,7 @@ class SearchBar extends Component {
                         onChangeText={(searchText) => this.setState({searchText})}
                     />
                     <TouchableOpacity onPress={this.getSearchResults}>
-                        <FontAwesome name="search" color="black" size={20} style={styles.icon}/>
+                        <Ionicons name="ios-search" color="black" size={25} style={styles.icon}/>
                     </TouchableOpacity>
                 </View>
             </View>
