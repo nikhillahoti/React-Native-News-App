@@ -7,6 +7,8 @@ import {Text,
 import LogoHeader from './Components/LogoHeader';
 import SearchBar from './Components/SearchBar';
 
+import Row from './Components/Row';
+
 class LandingComponent extends Component {
 
     render(){
@@ -14,6 +16,8 @@ class LandingComponent extends Component {
             <View style={styles.main}>
                 <LogoHeader style={styles.logo}/>
                 <SearchBar />
+
+                <Row />
             </View>
         );
     }
@@ -25,7 +29,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     logo:{
-        flex: 1
+        //flex: 1
     },
     body: {
         flex: 1,

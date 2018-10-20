@@ -11,7 +11,7 @@ const LogoHeader = () => {
     return (
         <View style={styles.mainContainer}>
             <View style={styles.container}>
-                <Logo name="newspaper-o" color="#3B5998"  size={20} />
+                <Logo name="newspaper-o" color="#ffffff"  size={20} />
                 <Text style={styles.header}>News App</Text>
             </View>
         </View>
@@ -24,19 +24,21 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#99CCFF',
-        width: '100%'
+        backgroundColor: '#3B5998',
+        width: '100%',
+        textAlign: 'center'
     },
     header: {
         fontSize: 14,
-        color: '#3B5998',
+        color: '#ffffff',
         paddingLeft: 20,
         fontWeight:'bold',
         textAlign: 'center'
     },
     mainContainer: {
         height: 50,
-        margin: 30
+        margin: 30,
+        backgroundColor: '#3B5998'
     }
 });
 
