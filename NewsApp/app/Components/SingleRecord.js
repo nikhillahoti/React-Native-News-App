@@ -7,6 +7,13 @@ import {Text,
 
 class SingleRecord extends Component {
 
+
+    checkRecordValue = () => {
+        if(this.props.record.urlToImage === null){
+            this.props.record.urlToImage = "";
+        }
+    }
+
     render(){
     /*    let title = "How the blockchain could break Big Tech’s hold on AI";
         let url = "https://www.sfgate.com/business/article/How-the-blockchain-could-break-Big-Tech-s-hold-13322048.php";
@@ -14,6 +21,8 @@ class SingleRecord extends Component {
         let sourceName = "Herald";
         let time="51 minutes ago"; */
         
+        this.checkRecordValue();
+
         return (
             <View style={styles.mainContainer}>
                 <View style={styles.mainContentContainer}>

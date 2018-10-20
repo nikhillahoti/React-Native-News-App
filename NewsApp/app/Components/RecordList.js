@@ -1,35 +1,29 @@
 import React, {Component} from 'react';
 import {
     View,
-    ListView,
-    Text
+    Text,
+    StyleSheet
 } from 'react-native';
 
+import SingleRecord from './SingleRecord';
+
 class RecordList extends Component {
-    
-    fetchData = (searchText) => {
-        let URL = "https://newsapi.org/v2/everything?q=bitcoin&from=2018-09-19&sortBy=publishedAt&apiKey=0779894fee914878a3e5353ecefd9e20";
-        fetch(URL)
-        .then((data) => {
-            console.log(data);
-            let records = JSON.parse(data._bodyText);
-            console.log(records.articles);
-        });
-    }
-
     render(){
-
-
-
-        let recordsList = "";
-
-
+        let RecordListt = this.props.articles.map((rec, i) => <SingleRecord record={rec} key={i}/>);
+        console.log(RecordListt);
         return (
             <View>
-                {records}
+                {RecordListt}
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    listView: {
+        alignItems: 'center',
+        padding: 10
+    }
+});
 
 export default RecordList;
