@@ -21,11 +21,13 @@ class LandingComponent extends Component {
         record.source.name = "Herald";
         record.time="51 minutes ago"; 
 
+        //<SingleRecord record={record} style={styles.recordList}/>
+
         return (
             <View style={styles.main}>
                 <LogoHeader style={styles.logo}/>
                 <SearchBar style={styles.searchBar}/>
-                <SingleRecord record={record} style={styles.recordList}/>
+                
             </View>
         );
     }

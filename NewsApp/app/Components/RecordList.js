@@ -13,6 +13,7 @@ class RecordList extends Component {
         console.log(RecordListt);
         return (
             <View>
+                <SingleRecord record={this.props.articles[0]} />
                 {RecordListt}
             </View>
         );
