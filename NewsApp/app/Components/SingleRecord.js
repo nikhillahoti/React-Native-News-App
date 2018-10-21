@@ -9,12 +9,12 @@ class SingleRecord extends Component {
 
     calculateTime = () => {
         let seconds = (Date.now() - Date.parse(this.props.record.publishedAt)) / 1000;
-        var minutes = seconds / 60;
+        var minutes = (seconds / 60).toFixed(2);
 
         if(minutes > 60){
-            var hours = minutes / 60;
+            var hours = (minutes / 60).toFixed(2);
             if (hours > 24){
-                let days = hours / 24;
+                let days = (hours / 24).toFixed(2);
                 if(days > 1)
                     this.props.record.time = days + " days ago";
                 else
@@ -24,7 +24,11 @@ class SingleRecord extends Component {
                 this.props.record.time = hours + " hours ago";
         }
         else
+        {
+            console.log(hours);
+            console.log(this.props.record.publishedAt);
             this.props.record.time = hours + " minutes ago";
+        }
     }
 
     render(){
@@ -55,8 +59,7 @@ class SingleRecord extends Component {
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
-        flexDirection: 'row',
-        marginTop: 20
+        flexDirection: 'row'
     },
     mainContentContainer: {
         flex: 3,

@@ -10,7 +10,7 @@ import SingleRecord from './SingleRecord';
 
 class RecordList extends Component {
     render(){
-        let RecordListt = this.props.articles.map((rec, i) => <View style={styles.recView} key={i}><SingleRecord record={rec} /></View>);
+        let RecordListt = this.props.articles.map((rec, i) => <View key={i}><SingleRecord record={rec} /><View style={styles.recView} ></View></View>);
         return (
             <ScrollView>
                 {RecordListt}
@@ -21,8 +21,10 @@ class RecordList extends Component {
 
 const styles = StyleSheet.create({
     recView: {
-        borderBottomColor: 'grey',
-        borderBottomWidth: 1
+        borderBottomColor: 'silver',
+        borderBottomWidth: 1,
+        margin: 10,
+        justifyContent: 'center'
     }
 });
 
