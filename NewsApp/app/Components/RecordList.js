@@ -11,7 +11,6 @@ import SingleRecord from './SingleRecord';
 class RecordList extends Component {
     render(){
         let RecordListt = this.props.articles.map((rec, i) => <View style={styles.recView}><SingleRecord record={rec} key={i}/></View>);
-        console.log(RecordListt);
         return (
             <ScrollView>
                 {RecordListt}

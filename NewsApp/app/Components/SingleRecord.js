@@ -7,13 +7,6 @@ import {Text,
 
 class SingleRecord extends Component {
 
-
-    checkRecordValue = () => {
-        if(this.props.record.urlToImage === null){
-            this.props.record.urlToImage = "http";
-        }
-    }
-
     calculateTime = () => {
         let seconds = (Date.now() - Date.parse(this.props.record.publishedAt)) / 1000;
         var minutes = seconds / 60;
@@ -39,7 +32,7 @@ class SingleRecord extends Component {
             return <View><Text>Bas re</Text></View>;
         }
 
-        this.checkRecordValue();
+        let imageProps = (this.props.record.urlToImage === null) ? require('./../assets/images/default-image.jpg') : {uri: this.props.record.urlToImage};
         this.calculateTime();
         return (
             <View style={styles.mainContainer}>
@@ -50,7 +43,7 @@ class SingleRecord extends Component {
                 </View>
                 <View style={styles.imageContainer}>
                     <Image 
-                        source={{uri: this.props.record.urlToImage}}
+                        source={imageProps}
                         style={{width: 80, height: 80}}
                     />
                 </View>
