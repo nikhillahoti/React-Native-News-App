@@ -22,23 +22,22 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#3B5998',
-        width: '100%',
-        marginTop: 15,
-        textAlign: 'center'
+        marginTop: 10
     },
     header: {
         fontSize: 14,
-        color: '#ffffff',
-        paddingLeft: 20,
         fontWeight:'bold',
-        textAlign: 'center'
+        color: '#ffffff',
+        textAlign: 'center',
+        paddingLeft: 20,
     },
     mainContainer: {
-        height: 50,
-        marginTop: 30,
-        backgroundColor: '#3B5998'
+        height: 40,
+        marginTop: 100,
+        backgroundColor: '#3B5998',
+        borderBottomColor: 'black',
+        borderBottomWidth: 1
     }
 });
 

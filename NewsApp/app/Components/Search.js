@@ -6,12 +6,11 @@ import {
     ,StyleSheet
     ,TouchableOpacity
 } from 'react-native';
-import _ from 'lodash';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import RecordList from './RecordList';
 
-class SearchBar extends Component {
+class Search extends Component {
 
     constructor(props){
         super(props);
@@ -59,7 +58,7 @@ class SearchBar extends Component {
 
     render(){
         return (
-            <View style={styles.mainCont}>
+            <View>
                 <View style={styles.searchContainer}>
                     <TextInput 
                         editable = {true}
@@ -71,6 +70,7 @@ class SearchBar extends Component {
                         <Ionicons name="ios-search" color="black" size={25} style={styles.icon}/>
                     </TouchableOpacity>
                 </View>
+                <View style={styles.viewSeparator} />
                 <View style={styles.recordsContainer}>
                     <RecordList articles={this.state.records} />
                 </View>
@@ -80,18 +80,23 @@ class SearchBar extends Component {
 }
 
 const styles = StyleSheet.create({
+    viewSeparator: {
+        borderBottomWidth: 1,
+        borderBottomColor: 'red'
+    },
     searchContainer: {
         flexDirection: 'row',
-        padding: 20,
+        padding: 10,
         height: '10%'
     },
     icon: {
         alignSelf: 'flex-end'
     },
     textInput: {
-        borderColor:'black',
+        borderColor:'silver',
         borderWidth: 1,
         width: '80%',
+        height: 30,
         marginRight: 20
     },
     recordsContainer: {
@@ -99,4 +104,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default SearchBar;
+export default Search;
