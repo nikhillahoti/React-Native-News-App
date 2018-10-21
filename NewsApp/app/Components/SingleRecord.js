@@ -41,16 +41,12 @@ class SingleRecord extends Component {
 
         this.checkRecordValue();
         this.calculateTime();
-        console.log("here ");
-        console.log(this.props.record);
-        console.log(this.props.record.source.name);
         return (
             <View style={styles.mainContainer}>
                 <View style={styles.mainContentContainer}>
                     <Text style={styles.sourceName}>{this.props.record.source.name}</Text>
                     <Text style={styles.Content}>{this.props.record.title}</Text>
                     <Text style={styles.timeFont}>{this.props.record.time}</Text>
-                    <Text> Crazy Text</Text>
                 </View>
                 <View style={styles.imageContainer}>
                     <Image 
@@ -66,7 +62,8 @@ class SingleRecord extends Component {
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginTop: 20
     },
     mainContentContainer: {
         flex: 3,
@@ -76,7 +73,8 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
         flex: 1,
-        textAlign: 'right'
+        textAlign: 'right',
+        marginBottom: 10
     },
     sourceName: {
         fontSize: 12,

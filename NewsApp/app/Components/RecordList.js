@@ -1,29 +1,29 @@
 import React, {Component} from 'react';
 import {
-    View,
+    ScrollView,
     Text,
-    StyleSheet
+    StyleSheet,
+    View
 } from 'react-native';
 
 import SingleRecord from './SingleRecord';
 
 class RecordList extends Component {
     render(){
-        let RecordListt = this.props.articles.map((rec, i) => <SingleRecord record={rec} key={i}/>);
+        let RecordListt = this.props.articles.map((rec, i) => <View style={styles.recView}><SingleRecord record={rec} key={i}/></View>);
         console.log(RecordListt);
         return (
-            <View>
-                <SingleRecord record={this.props.articles[0]} />
+            <ScrollView>
                 {RecordListt}
-            </View>
+            </ScrollView>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    listView: {
-        alignItems: 'center',
-        padding: 10
+    recView: {
+        borderBottomColor: 'silver',
+        borderBottomWidth: 1
     }
 });
 

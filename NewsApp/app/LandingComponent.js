@@ -26,8 +26,7 @@ class LandingComponent extends Component {
         return (
             <View style={styles.main}>
                 <LogoHeader style={styles.logo}/>
-                <SearchBar style={styles.searchBar}/>
-                
+                <SearchBar style={styles.searchBar}/>           
             </View>
         );
     }
@@ -35,8 +34,13 @@ class LandingComponent extends Component {
 
 const styles = StyleSheet.create({
     main: {
-        width: '100%',
-        flex: 1
+        width: '100%'
+    },
+    logo: {
+        height: '20%'
+    },
+    searchBar: {
+        height: '80%'
     }
 });
 

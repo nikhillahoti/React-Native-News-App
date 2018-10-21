@@ -20,12 +20,12 @@ const LogoHeader = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#3B5998',
         width: '100%',
+        marginTop: 15,
         textAlign: 'center'
     },
     header: {
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     },
     mainContainer: {
         height: 50,
-        margin: 30,
+        marginTop: 30,
         backgroundColor: '#3B5998'
     }
 });

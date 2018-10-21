@@ -59,7 +59,7 @@ class SearchBar extends Component {
 
     render(){
         return (
-            <View>
+            <View style={styles.mainCont}>
                 <View style={styles.searchContainer}>
                     <TextInput 
                         editable = {true}
@@ -71,7 +71,7 @@ class SearchBar extends Component {
                         <Ionicons name="ios-search" color="black" size={25} style={styles.icon}/>
                     </TouchableOpacity>
                 </View>
-                <View>
+                <View style={styles.recordsContainer}>
                     <RecordList articles={this.state.records} />
                 </View>
             </View>
@@ -82,7 +82,8 @@ class SearchBar extends Component {
 const styles = StyleSheet.create({
     searchContainer: {
         flexDirection: 'row',
-        padding: 20
+        padding: 20,
+        height: '10%'
     },
     icon: {
         alignSelf: 'flex-end'
@@ -92,6 +93,9 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         width: '80%',
         marginRight: 20
+    },
+    recordsContainer: {
+        height: '90%'
     }
 })
 
