@@ -18,6 +18,8 @@ class Search extends Component {
             searchText: "",
             records:  []
         }
+
+        this.getSearchResults("");
     }
 
     // Returns a promise containing 20 news item relating to the search text or headlines 
