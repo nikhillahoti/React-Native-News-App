@@ -67,7 +67,7 @@ class Search extends Component {
                         onChangeText={(searchText) => this.setState({searchText})}
                     />
                     <TouchableOpacity onPress={this.getSearchResults} style={styles.searchIcon}>
-                        <Ionicons name="ios-search" color="black" size={20} style={styles.icon}/>
+                        <Ionicons name="ios-search" color="black" size={20} />
                     </TouchableOpacity>
                 </View>
                 <View style={styles.viewSeparator} />
@@ -82,14 +82,12 @@ class Search extends Component {
 const styles = StyleSheet.create({
     viewSeparator: {
         borderBottomWidth: 1,
-        borderBottomColor: 'red'
+        borderBottomColor: '#3B5998',
+        marginBottom: 10
     },
     searchContainer: {
         flexDirection: 'row',
         padding: 10
-    },
-    icon: {
-        //alignSelf: 'flex-end'
     },
     searchIcon: {
         borderWidth: 1,
