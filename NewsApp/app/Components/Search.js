@@ -73,6 +73,7 @@ class Search extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.viewSeparator} />
+                <Text style={styles.titleText}> This is where the title would be </Text>
                 <View style={styles.recordsContainer}>
                     <RecordList articles={this.state.records} />
                 </View>
@@ -109,6 +110,13 @@ const styles = StyleSheet.create({
     },
     recordsContainer: {
         height: '90%'
+    },
+    titleText: {
+        fontSize: 16,
+        fontWeight:'bold',
+        textAlign: 'left',
+        color: '#3B5998',
+        margin: 15
     }
 })
 
