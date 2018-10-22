@@ -16,10 +16,12 @@ class Search extends Component {
         super(props);
         this.state = {
             searchText: "",
-            records:  []
+            records:  [],
+            headlines: ""
         }
 
-        this.getSearchResults("");
+        // To load the headlines initially 
+        // this.getSearchResults("");
     }
 
     // Returns a promise containing 20 news item relating to the search text or headlines 
@@ -47,13 +49,18 @@ class Search extends Component {
 
     getSearchResults = () => {
         // Getting the results for the searched text. If passed blank, we fetch the headlines in the us region
-        let vari = this.state.searchText;
-        console.log("THis is called");
-        let recordList = this.fetchData(vari);
+        let recordList = this.fetchData(this.state.searchText);
         recordList.then((articles) => {
             console.log(articles);
+
+            let headline = "Top 20 headlines";
+            if(this.state.searchText !== ""){
+                headline = "Top 20 news about " + this.state.searchText;
+            }
+
             this.setState({
-                records: articles
+                records: articles,
+                headlines: headline
             })
         });
     }
@@ -73,7 +80,7 @@ class Search extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.viewSeparator} />
-                <Text style={styles.titleText}> This is where the title would be </Text>
+                <Text style={styles.titleText}>{this.state.headlines}</Text>
                 <View style={styles.recordsContainer}>
                     <RecordList articles={this.state.records} />
                 </View>
