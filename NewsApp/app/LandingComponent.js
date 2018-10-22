@@ -22,7 +22,7 @@ class LandingComponent extends Component {
         return (
             <View style={styles.main}>
                 <LogoHeader style={styles.logo}/>
-                <Search style={styles.searchBar}/>           
+                <Search style={styles.searchBar} navigation={this.props.navigation}/>           
             </View>
         );
     }

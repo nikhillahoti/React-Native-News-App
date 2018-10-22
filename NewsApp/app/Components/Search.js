@@ -82,7 +82,7 @@ class Search extends Component {
                 <View style={styles.viewSeparator} />
                 <Text style={styles.titleText}>{this.state.headlines}</Text>
                 <View style={styles.recordsContainer}>
-                    <RecordList articles={this.state.records} />
+                    <RecordList articles={this.state.records} navigation={this.props.navigation}/>
                 </View>
             </View>
         );
