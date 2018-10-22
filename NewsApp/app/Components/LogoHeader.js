@@ -12,7 +12,7 @@ const LogoHeader = () => {
         <View style={styles.mainContainer}>
             <View style={styles.container}>
                 <Logo name="newspaper-o" color="#ffffff"  size={20} />
-                <Text style={styles.header}>News App</Text>
+                <Text style={styles.header}>The Herald</Text>
             </View>
         </View>
     );

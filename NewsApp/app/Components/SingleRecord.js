@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
     imageContainer: {
         flex: 1,
         textAlign: 'right',
-        marginBottom: 10
+        marginBottom: 10,
+        paddingRight: 10
     },
     sourceName: {
         fontSize: 12,
