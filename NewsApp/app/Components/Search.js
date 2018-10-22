@@ -66,8 +66,8 @@ class Search extends Component {
                         style={styles.textInput}
                         onChangeText={(searchText) => this.setState({searchText})}
                     />
-                    <TouchableOpacity onPress={this.getSearchResults}>
-                        <Ionicons name="ios-search" color="black" size={25} style={styles.icon}/>
+                    <TouchableOpacity onPress={this.getSearchResults} style={styles.searchIcon}>
+                        <Ionicons name="ios-search" color="black" size={20} style={styles.icon}/>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.viewSeparator} />
@@ -86,18 +86,26 @@ const styles = StyleSheet.create({
     },
     searchContainer: {
         flexDirection: 'row',
-        padding: 10,
-        height: '10%'
+        padding: 10
     },
     icon: {
-        alignSelf: 'flex-end'
+        //alignSelf: 'flex-end'
+    },
+    searchIcon: {
+        borderWidth: 1,
+        borderColor: 'silver',
+        height: 30,
+        padding: 2,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '10%'
     },
     textInput: {
         borderColor:'silver',
         borderWidth: 1,
-        width: '80%',
+        width: '90%',
         height: 30,
-        marginRight: 20
+        marginRight: 0
     },
     recordsContainer: {
         height: '90%'
