@@ -3,14 +3,15 @@ import {
     ScrollView,
     Text,
     StyleSheet,
-    View
+    View,
+    TouchableOpacity
 } from 'react-native';
 
 import SingleRecord from './SingleRecord';
 
 class RecordList extends Component {
     render(){
-        let RecordListt = this.props.articles.map((rec, i) => <View key={i}><SingleRecord record={rec} /><View style={styles.recView} ></View></View>);
+        let RecordListt = this.props.articles.map((rec, i) => <View key={i}><TouchableOpacity onPress={() => this.props.navigation.navigate('WebView')}><SingleRecord record={rec} /><View style={styles.recView} ></View></TouchableOpacity></View>);
         return (
             <ScrollView>
                 {RecordListt}
@@ -21,7 +22,7 @@ class RecordList extends Component {
 
 const styles = StyleSheet.create({
     recView: {
-        borderBottomColor: 'silver',
+        borderBottomColor: 'darkgrey',
         borderBottomWidth: 1,
         margin: 10,
         justifyContent: 'center'

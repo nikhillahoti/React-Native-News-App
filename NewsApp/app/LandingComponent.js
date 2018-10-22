@@ -1,5 +1,6 @@
-import React from 'react';
-import {Text,
+import React, {Component} from 'react';
+import {
+     Text,
      View,
      StyleSheet
 } from 'react-native';
@@ -7,13 +8,24 @@ import {Text,
 import LogoHeader from './Components/LogoHeader';
 import Search from './Components/Search';
 
-const LandingComponent = () => {
-    return (
-        <View style={styles.main}>
-            <LogoHeader style={styles.logo}/>
-            <Search style={styles.searchBar}/>           
-        </View>
-    );
+class LandingComponent extends Component {
+
+    constructor(props){
+        super(props);
+    }
+
+    static navigationOptions = {
+        header: null
+    }
+
+    render() {
+        return (
+            <View style={styles.main}>
+                <LogoHeader style={styles.logo}/>
+                <Search style={styles.searchBar}/>           
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
