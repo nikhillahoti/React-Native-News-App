@@ -3,7 +3,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import LandingComponent from './app/LandingComponent';
 
 import {createStackNavigator} from 'react-navigation';
-import WebViewComponent from './app/WebViewComponent';
+import WebViewComponent from './app/Components/WebViewComponent';
 
 export default class App extends Component {
   render() {
@@ -12,12 +12,6 @@ export default class App extends Component {
     );
   }
 }
-
-/*
-<View style={styles.container}>
-  <LandingComponent />
-</View>
-*/
 
 const AppStackNavigator = createStackNavigator({
   Landing: LandingComponent,
