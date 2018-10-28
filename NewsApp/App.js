@@ -4,6 +4,7 @@ import LandingComponent from './app/LandingComponent';
 
 import {createStackNavigator} from 'react-navigation';
 import WebViewComponent from './app/Components/WebViewComponent';
+import EventDetails from './app/Components/EventDetails';
 
 export default class App extends Component {
   render() {
@@ -14,8 +15,9 @@ export default class App extends Component {
 }
 
 const AppStackNavigator = createStackNavigator({
-  Landing: LandingComponent,
-  WebView: WebViewComponent
+  Landing: EventDetails,
+  WebView: WebViewComponent,
+  EventDetails: EventDetails
 });
 
 const styles = StyleSheet.create({
