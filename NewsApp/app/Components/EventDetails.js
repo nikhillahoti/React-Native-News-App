@@ -90,7 +90,8 @@ const styles = StyleSheet.create({
     },
     tchVisit: {
         backgroundColor: '#5c5cd6',
-        width: '40%'
+        width: '40%',
+        height: 40
     },
     titleImage: {
         height: 250,
