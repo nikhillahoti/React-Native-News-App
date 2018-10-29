@@ -32,9 +32,6 @@ class SingleRecord extends Component {
     }
 
     render(){
-        if(this.props.record === undefined){
-            return <View><Text>Bas re</Text></View>;
-        }
 
         let imageProps = (this.props.record.urlToImage === null) ? require('./../assets/images/default-image.jpg') : {uri: this.props.record.urlToImage};
         this.calculateTime();

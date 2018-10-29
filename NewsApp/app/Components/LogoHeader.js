@@ -22,20 +22,20 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'center',
-        backgroundColor: '#3B5998',
+        backgroundColor: '#5c5cd6',
         marginTop: 10
     },
     header: {
         fontSize: 14,
         fontWeight:'bold',
-        color: '#ffffff',
+        color: '#fff',
         textAlign: 'center',
         paddingLeft: 20,
     },
     mainContainer: {
         height: 40,
         marginTop: 30,
-        backgroundColor: '#3B5998',
+        backgroundColor: '#5c5cd6',
         borderBottomColor: 'black',
         borderBottomWidth: 1
     }

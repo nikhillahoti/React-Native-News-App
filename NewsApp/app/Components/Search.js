@@ -92,7 +92,7 @@ class Search extends Component {
 const styles = StyleSheet.create({
     viewSeparator: {
         borderBottomWidth: 1,
-        borderBottomColor: '#3B5998',
+        borderBottomColor: '#5c5cd6',
         marginBottom: 10
     },
     searchContainer: {
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight:'bold',
         textAlign: 'left',
-        color: '#3B5998',
+        color: '#5c5cd6',
         margin: 15
     }
 })

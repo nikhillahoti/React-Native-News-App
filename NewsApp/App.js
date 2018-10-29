@@ -1,28 +1,29 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
 import LandingComponent from './app/LandingComponent';
 
-import {createStackNavigator} from 'react-navigation';
+
 import WebViewComponent from './app/Components/WebViewComponent';
 import EventDetails from './app/Components/EventDetails';
+import { Router, Scene} from 'react-native-router-flux';
 
 export default class App extends Component {
   render() {
     return (
-      <AppStackNavigator />      
+      <Router>
+        <Scene key="root">
+          <Scene key="landing" component={LandingComponent} initial />
+          <Scene key="eventDetails" component={EventDetails}/>
+          <Scene key="WebView" component={WebViewComponent}/>
+        </Scene>
+      </Router>
+      //<AppStackNavigator />      
     );
   }
 }
 
-const AppStackNavigator = createStackNavigator({
+/*const AppStackNavigator = createStackNavigator({
   Landing: EventDetails,
   WebView: WebViewComponent,
   EventDetails: EventDetails
 });
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
+*/

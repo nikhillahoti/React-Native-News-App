@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import {
     View,
     StyleSheet,
@@ -7,6 +6,8 @@ import {
     TouchableOpacity,
     Image
 } from 'react-native';
+import {Actions} from 'react-native-router-flux';
+
 
 class EventDetails extends Component {
     
@@ -27,34 +28,36 @@ class EventDetails extends Component {
                 this.props.record.time = hours + " hours ago";
         }
         else
-        {
-            console.log(hours);
-            console.log(this.props.record.publishedAt);
             this.props.record.time = hours + " minutes ago";
-        }
+        
     }
 
     render(){
 
-        const sampletext = "This is some sample text, This is some sample text, This is some sample text, This is some sample text";
+        // Removing the character length from the content string
+        let content = this.props.record.content;
+        this.props.record.content = content.substring(0, content.indexOf(" [+"));
 
         // If the image URL is not present, setting a default image as the image
-        //let imageProps = (this.props.record.urlToImage === null) ? require('./../assets/images/default-image.jpg') : {uri: this.props.record.urlToImage};
-        let imageProps = {uri: "https://zdnet4.cbsistatic.com/hub/i/r/2014/08/18/1e4b28b5-26c1-11e4-8c7f-00505685119a/thumbnail/770x578/8e50fb0264ffe72f0facd9d42562d477/1-9m-online-voting-platform-deal-for-nsw.jpg"};
+        let imageProps = (this.props.record.urlToImage === null) ? require('./../assets/images/default-image.jpg') : {uri: this.props.record.urlToImage};
+        //let imageProps = {uri: "https://bitcoinist.com/wp-content/uploads/2018/10/shutterstock_419990866-e1538805215269.jpg"};
 
         return (
             <View style={styles.container}>
-                <Text style={styles.txttitle}>Is Bitcoin really the future now after seeing all the trends it has</Text>
+                <Text style={styles.txttitle}>{this.props.record.title}</Text>
                 <Image 
                         source={imageProps}
                         style={styles.titleImage}
                 />
                 <View style={styles.contentContainer}>
-                    <Text style={styles.txtcontents}>{sampletext}</Text>
+                    <Text style={styles.txtcontents}>{this.props.record.content}</Text>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.tchVisit}>
-                        <Text style={styles.btnVisit}>Visit the page</Text>
+                    <TouchableOpacity 
+                        style={styles.tchVisit}
+                        onPress={() => Actions.WebView({URL: this.props.record.url})}
+                    >
+                            <Text style={styles.btnVisit}>Visit the page</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -70,19 +73,20 @@ const styles = StyleSheet.create({
     },
     txttitle: {
         textAlign: 'center',
-        fontSize: 20,
+        fontSize: 17,
         fontWeight: 'bold',
         color: '#5c5cd6',
         margin: 5
     },
     txtcontents: {
         textAlign: 'left',
-        fontSize: 17,
+        fontSize: 15,
         margin: 20
     },
     btnVisit: {
         color: 'white',
-        textAlign: 'center'
+        textAlign: 'center',
+        paddingTop: 8
     },
     buttonContainer: {
         alignItems: 'center',

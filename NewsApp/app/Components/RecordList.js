@@ -7,6 +7,8 @@ import {
     TouchableOpacity
 } from 'react-native';
 
+import {Actions} from 'react-native-router-flux';
+
 import SingleRecord from './SingleRecord';
 
 class RecordList extends Component {
@@ -14,7 +16,7 @@ class RecordList extends Component {
         console.log(this.props.articles);
         let RecordListt = this.props.articles.map((rec, i) => {
             return (<View key={i}>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('WebView', {URL: rec.url})}>
+                        <TouchableOpacity onPress={() => Actions.eventDetails({record: rec})}>
                             <SingleRecord record={rec} />
                         </TouchableOpacity>
                         <View style={styles.recView} />
