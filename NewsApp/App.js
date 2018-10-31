@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
+import { Router, Scene} from 'react-native-router-flux';
+import {createStore} from 'redux';
+
 import LandingComponent from './app/LandingComponent';
-
-
 import WebViewComponent from './app/Components/WebViewComponent';
 import EventDetails from './app/Components/EventDetails';
-import { Router, Scene} from 'react-native-router-flux';
+
+const reducer = () => {
+  
+}
+
+const store = createStore();
 
 export default class App extends Component {
   render() {
@@ -16,14 +22,6 @@ export default class App extends Component {
           <Scene key="WebView" component={WebViewComponent}/>
         </Scene>
       </Router>
-      //<AppStackNavigator />      
     );
   }
 }
-
-/*const AppStackNavigator = createStackNavigator({
-  Landing: EventDetails,
-  WebView: WebViewComponent,
-  EventDetails: EventDetails
-});
-*/
