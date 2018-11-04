@@ -21,7 +21,7 @@ class Search extends Component {
         }
 
         // To load the headlines initially 
-        this.getSearchResults("");
+        //this.getSearchResults("");
     }
 
     // Returns a promise containing 20 news item relating to the search text or headlines 
