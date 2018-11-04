@@ -10,10 +10,10 @@ import Logo from 'react-native-vector-icons/FontAwesome';
 const LogoHeader = () => {
     return (
         <View style={styles.mainContainer}>
-            <View style={styles.container}>
+            
                 <Logo name="newspaper-o" color="#ffffff"  size={20} />
-                <Text style={styles.header}>The Herald</Text>
-            </View>
+                <Text style={styles.header}>Nearby Incidents</Text>
+    
         </View>
     );
 }

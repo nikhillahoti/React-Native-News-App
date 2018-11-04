@@ -18,10 +18,12 @@ class LandingComponent extends Component {
         header: null
     }
 
+
     render() {
+
+        //<LogoHeader style={styles.logo}/>
         return (
             <View style={styles.main}>
-                <LogoHeader style={styles.logo}/>
                 <Search style={styles.searchBar} navigation={this.props.navigation}/>           
             </View>
         );
